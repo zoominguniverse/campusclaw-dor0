@@ -15,12 +15,12 @@ The system SHALL assign every authenticated account exactly one role: teacher or
 
 ### Requirement: Students cannot upload teaching materials
 
-The system SHALL reject material uploads from student accounts.
+The system SHALL reject material uploads from student accounts with an HTTP 403 Forbidden response and SHALL NOT create any material record.
 
 #### Scenario: Student attempts to upload
 
 - **WHEN** a student account calls the material upload endpoint
-- **THEN** the system rejects the request with a forbidden response and creates no material record
+- **THEN** the system responds with HTTP 403 Forbidden and creates no material record
 
 #### Scenario: Teacher uploads material
 

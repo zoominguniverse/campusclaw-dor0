@@ -11,12 +11,17 @@ The system SHALL scope every material read to the requesting user's class and SH
 #### Scenario: Cross-class material list
 
 - **WHEN** a signed-in member of class A requests the material list of class B
-- **THEN** the system rejects the request with a forbidden response and returns no class B materials
+- **THEN** the system responds with HTTP 403 Forbidden and returns no class B materials
 
 #### Scenario: Cross-class single material
 
 - **WHEN** a signed-in member of class A requests a single material owned by class B
-- **THEN** the system rejects the request with a forbidden response and returns no material data
+- **THEN** the system responds with HTTP 403 Forbidden and returns no material data
+
+#### Scenario: Own-class material list
+
+- **WHEN** a signed-in member of class A requests the material list of class A
+- **THEN** the system returns the class A materials
 
 ### Requirement: Class isolation is enforced on the server
 

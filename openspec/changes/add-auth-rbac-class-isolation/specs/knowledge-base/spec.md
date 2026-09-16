@@ -13,6 +13,11 @@ The system SHALL write a teacher-uploaded teaching material into the knowledge b
 - **WHEN** a teacher uploads a valid teaching material for their class
 - **THEN** the system persists the material in the knowledge base together with its owning class and uploader, and responds with a success status
 
+#### Scenario: Student upload is forbidden
+
+- **WHEN** a student account calls the material upload endpoint
+- **THEN** the system responds with HTTP 403 Forbidden and writes no record
+
 #### Scenario: Unauthenticated upload
 
 - **WHEN** an unauthenticated request calls the material upload endpoint
